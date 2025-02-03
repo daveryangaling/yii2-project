@@ -31,8 +31,13 @@ class ProjectController extends Controller
                     'class' => AccessControl::class,
                     'rules' => [
                         [
+                            'actions' => ['view'],
                             'allow' => true,
-                            'roles' => ['@'],
+                            'roles' => ['viewProject'],
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['manageProjects'],
                         ],
                     ],
                 ],
